@@ -9,8 +9,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "local_db",
-      "database_id": "test",
+      "database_name": "staging_db",
+      "database_id": "036a10ca-8f04-4069-8c81-317fdfabc3e5",
       "migrations_dir": "./src/server/db/migrations"
     }
   ],
@@ -18,7 +18,7 @@
     "staging": {
       "vars": {
         "ENVIRONMENT": "staging",
-        "POLICY_AUD": "",
+        "POLICY_AUD": "0d11be783a7a0dacf3d1eb3657d7671c97d9c3702616c6df19a75126647cfc5a",
         "CF_ACCESS_DOMAIN": "https://nich3.cloudflareaccess.com"
       },
       "d1_databases": [
