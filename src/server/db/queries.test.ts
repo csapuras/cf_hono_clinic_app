@@ -1,11 +1,11 @@
 import { it, expect, mock, beforeEach } from "bun:test";
 import { insertPerson } from "./queries";
 import type { D1Database } from "@cloudflare/workers-types";
-import type { NewPerson } from "./schema";
+import type { NewPerson } from "./schema/persons";
 import { getTestDb } from "../../../test/get-test-db";
 import { drizzle } from "drizzle-orm/bun-sqlite";
 import { reset } from "drizzle-seed";
-import * as schema from "./schema";
+import * as schema from "./schema/persons";
 
 mock.module("./db.ts", () => {
   return {

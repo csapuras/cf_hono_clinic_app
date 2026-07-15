@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "6b765c28-51a9-4d33-a733-665b531721ac",
+  "id": "b5c8a800-38d2-462f-93b6-3f2783594c29",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "persons": {
@@ -27,7 +27,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "'\"2026-07-15T07:19:23.159Z\"'"
+          "default": "'\"2026-07-15T07:46:34.277Z\"'"
         },
         "updated_at": {
           "name": "updated_at",
@@ -35,7 +35,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "'\"2026-07-15T07:19:23.159Z\"'"
+          "default": "'\"2026-07-15T07:46:34.277Z\"'"
         }
       },
       "indexes": {
