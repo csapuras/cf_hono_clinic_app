@@ -9,7 +9,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "staging_db",
+      "database_name": "local_db",
       "database_id": "036a10ca-8f04-4069-8c81-317fdfabc3e5",
       "migrations_dir": "./src/server/db/migrations"
     }
