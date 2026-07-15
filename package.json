@@ -1,5 +1,5 @@
 {
-  "name": "cf_hono_template",
+  "name": "cf_hono_clinic_app",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -20,8 +20,8 @@
     "deploy:staging": "bun run build:client && wrangler deploy --env staging",
     "deploy:prod": "bun run build:client && wrangler deploy --env production",
     "db:generate": "bun --bun drizzle-kit generate",
-    "db:migrate:local": "wrangler d1 migrations apply cf_hono_local_db --local",
-    "db:migrate:staging": "wrangler d1 migrations apply cf_hono_staging_db --remote --env staging",
+    "db:migrate:local": "wrangler d1 migrations apply local_db --local",
+    "db:migrate:staging": "wrangler d1 migrations apply staging_db --remote --env staging",
     "create:test:db": "bun run ./scripts/create-test-db.ts",
     "destroy:test:db": "bun run ./scripts/destroy-test-db.ts",
     "test": "bun run create:test:db && bun test && bun run destroy:test:db"

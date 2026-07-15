@@ -1,7 +1,7 @@
 {
-  "name": "cf_hono_template",
+  "name": "cf_hono_clinic_app",
   "main": "src/server/index.ts",
-  "compatibility_date": "2026-06-30",
+  "compatibility_date": "2026-07-02",
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS"
@@ -9,7 +9,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "cf_hono_local_db",
+      "database_name": "local_db",
       "database_id": "test",
       "migrations_dir": "./src/server/db/migrations"
     }
@@ -18,14 +18,14 @@
     "staging": {
       "vars": {
         "ENVIRONMENT": "staging",
-        "POLICY_AUD": "cb80752caff98358032872e35bc175228edf45c205b7523aab770257a435ceb3",
+        "POLICY_AUD": "",
         "CF_ACCESS_DOMAIN": "https://nich3.cloudflareaccess.com"
       },
       "d1_databases": [
         {
           "binding": "DB",
-          "database_name": "cf_hono_staging_db",
-          "database_id": "4070ab50-378e-4971-8c59-0742658d44bd",
+          "database_name": "staging_db",
+          "database_id": "",
           "migrations_dir": "./src/server/db/migrations"
         }
       ]
