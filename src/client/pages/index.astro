@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import { Signup } from "../components/Signup";
+import Card from "../components/Card.astro";
+---
+
+<Layout>
+  <Hero />
+  <div class="flex justify-center p-4">
+    <Signup />
+  </div>
+  <div class="space-y-5 p-4 md:flex md:gap-4 md:space-y-0">
+    <Card title="Title 1" description="There is a description" />
+    <Card title="Another Title" description="for the description to add test" />
+    <Card
+      title="Get real time updates on reports"
+      description="I am using DaisyUI and lucide and that is cool"
+    />
+  </div>
+</Layout>
