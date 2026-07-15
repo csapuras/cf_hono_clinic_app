@@ -24,7 +24,9 @@
     "db:migrate:staging": "wrangler d1 migrations apply staging_db --remote --env staging",
     "create:test:db": "bun run ./scripts/create-test-db.ts",
     "destroy:test:db": "bun run ./scripts/destroy-test-db.ts",
-    "test": "bun run create:test:db && bun test && bun run destroy:test:db"
+    "test": "bun run create:test:db && bun test && bun run destroy:test:db",
+    "clear": "rm -rf .wrangler/ ./src/server/db/migrations",
+    "db": "bun run db:generate && bun run db:migrate:local"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.0",

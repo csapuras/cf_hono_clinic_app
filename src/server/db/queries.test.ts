@@ -1,7 +1,7 @@
 import { it, expect, mock, beforeEach } from "bun:test";
-import { insertSubscriber } from "./queries";
+import { insertPerson } from "./queries";
 import type { D1Database } from "@cloudflare/workers-types";
-import type { NewSubscriber } from "./schema";
+import type { NewPerson } from "./schema";
 import { getTestDb } from "../../../test/get-test-db";
 import { drizzle } from "drizzle-orm/bun-sqlite";
 import { reset } from "drizzle-seed";
@@ -19,20 +19,20 @@ beforeEach(async () => {
 });
 
 it("inserts a new subscrier into the database", async () => {
-  const newSub: NewSubscriber = { email: "test@test.com" };
-  const subscriber = await insertSubscriber({} as D1Database, newSub);
+  const newSub: NewPerson = { email: "test@test.com" };
+  const subscriber = await insertPerson({} as D1Database, newSub);
   expect(subscriber.email).toBe(newSub.email);
   expect(subscriber.id).toBeDefined();
   expect(subscriber.createdAt).toBeDefined();
 });
 
 it("throws an error when inserting a duplicate email", async () => {
-  const newSub: NewSubscriber = { email: "test@test.com" };
-  await insertSubscriber({} as D1Database, newSub);
-  expect(insertSubscriber({} as D1Database, newSub)).rejects.toThrow();
+  const newSub: NewPerson = { email: "test@test.com" };
+  await insertPerson({} as D1Database, newSub);
+  expect(insertPerson({} as D1Database, newSub)).rejects.toThrow();
 });
 
 it("throws an error when trying to insert an invalid email", async () => {
-  const newSub: NewSubscriber = { email: "test@test" };
-  expect(insertSubscriber({} as D1Database, newSub)).rejects.toThrow();
+  const newSub: NewPerson = { email: "test@test" };
+  expect(insertPerson({} as D1Database, newSub)).rejects.toThrow();
 });
