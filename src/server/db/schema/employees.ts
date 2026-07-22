@@ -1,13 +1,7 @@
-import {
-  sqliteTable,
-  text,
-  integer,
-  check,
-  boolean,
-} from "drizzle-orm/sqlite-core";
+import { sqliteTable, text, integer, check } from "drizzle-orm/sqlite-core";
 import { sql } from "drizzle-orm";
-import { positions } from "./positions";
-import { persons } from "./persons";
+import { position } from "./positions";
+import { person } from "./persons";
 
 export const employee = sqliteTable("employee", {
   id: integer("id").primaryKey(),
@@ -21,13 +15,13 @@ export const employee = sqliteTable("employee", {
   updatedBy: integer("updated_by").notNull(),
   hireDate: integer("hire_date").notNull(),
   salary: integer("salary").notNull().default(0),
-  isActive: boolean("is_active").notNull().default(true),
+  isActive: integer("is_active", { mode: "boolean" }).notNull().default(true),
   position: integer("position_id")
     .notNull()
-    .references(() => positions.id, { onDelete: "cascade" }),
+    .references(() => position.id, { onDelete: "cascade" }),
   person: integer("person_id")
     .notNull()
-    .references(() => persons.id, { onDelete: "cascade" }),
+    .references(() => person.id, { onDelete: "cascade" }),
 });
 
 export type NewEmployee = typeof employee.$inferInsert;
