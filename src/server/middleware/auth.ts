@@ -7,12 +7,13 @@ interface Env {
 }
 
 export const accessAuth = createMiddleware(async (c, next) => {
-  if ((c.env.ENVIRONMENT = "development")) {
+  console.log(c.env.ENVIRONMENT);
+  if (c.env.ENVIRONMENT === "development") {
     await next();
   }
   // Verify the POLICY_AUD environment variable is set
   if (!c.env.POLICY_AUD) {
-    return c.json("Missing equired audience", 403);
+    return c.json("Missing required audience", 403);
   }
 
   // Get the JWT from the request headers

@@ -11,21 +11,8 @@ export const insertPerson = async (
 ) => {
   const db = getDB(d1Database);
   const [result] = await db
-    .insert(person.persons)
+    .insert(person.person)
     .values(NewPerson)
-    .returning();
-
-  return result;
-};
-
-export const insertPosition = async (
-  d1Database: D1Database,
-  NewPosition: NewPosition,
-) => {
-  const db = getDB(d1Database);
-  const [result] = await db
-    .insert(position.positions)
-    .values(NewPosition)
     .returning();
 
   return result;
